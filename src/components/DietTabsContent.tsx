@@ -23,7 +23,7 @@ export function DietTabsContent({ currentPlan }: DietTabsContentProps) {
                 <div className="h-px w-full bg-border my-4" />
 
                 {/* Meals */}
-                <div className="space-y-4">
+                <div className="space-y-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
                     {currentPlan.dietPlan.meals.map((meal: any, index: number) => (
                         <div
                             key={index}

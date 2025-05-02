@@ -1,4 +1,4 @@
-import { CalendarIcon, Dumbbell } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { TabsContent } from "@/components/ui/tabs";
 import {
     Accordion,
@@ -37,19 +37,19 @@ export function WorkoutTabsContent({ currentPlan }: WorkoutTabsContentProps) {
                             <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-primary/10 font-mono">
                                 <div className="flex justify-between w-full items-center">
                                     <span
-                                        className={`text-primary ${exerciseDay.day === today ? "underline font-bold" : ""
+                                        className={`text-primary text-lg ${exerciseDay.day === today ? "underline font-bold" : ""
                                             }`}
                                     >
                                         {exerciseDay.day}
                                     </span>
-                                    <div className="text-xs text-muted-foreground">
+                                    <div className="text-sm text-muted-foreground">
                                         {exerciseDay.routines.length} EXERCISES
                                     </div>
                                 </div>
                             </AccordionTrigger>
 
                             <AccordionContent className="pb-4 px-4">
-                                <div className="space-y-3 mt-2">
+                                <div className="space-y-3 mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                     {exerciseDay.routines.map((routine: any, routineIndex: any) => (
                                         <motion.div
                                             initial={{ opacity: 0, y: 10 }}
@@ -61,8 +61,7 @@ export function WorkoutTabsContent({ currentPlan }: WorkoutTabsContentProps) {
                                             <div className="flex justify-between items-start mb-2">
                                                 {/* Name + Icon */}
                                                 <div className="flex items-center gap-2">
-                                                    <Dumbbell className="w-4 h-4 text-muted-foreground" />
-                                                    <h4 className="font-semibold text-foreground">{routine.name}</h4>
+                                                    <h4 className="font-semibold text-[1.05rem] text-foreground">{routineIndex + 1}. {routine.name}</h4>
                                                 </div>
 
                                                 {/* Sets and Reps (Corner) */}

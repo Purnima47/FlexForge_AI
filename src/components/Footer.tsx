@@ -45,7 +45,7 @@ const Footer = () => {
               Privacy
             </Link>
             <Link
-              href="/contact"
+              href="https://github.com/Purnima47"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Contact
